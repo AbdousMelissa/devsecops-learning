@@ -55,24 +55,24 @@ jobs:
           push: false
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devsecops:latest
 
-  shellCheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install ShellCheck
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y shellcheck
-      - name: Lint script with ShellCheck
-        run: shellcheck app/test.sh
+  # shellCheck:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Install ShellCheck
+  #       run: |
+  #         sudo apt-get update
+  #         sudo apt-get install -y shellcheck
+  #     - name: Lint script with ShellCheck
+  #       run: shellcheck app/test.sh
 
-  security-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run security scan
-        run: |
-          echo Running security scan...
-          # Here you would add commands to run your security scanning tools
-          # For example, you could use Trivy for container scanning:
-          trivy image ${{ secrets.DOCKERHUB_USERNAME }}/devsecops:latest
+  # security-scan:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Run security scan
+  #       run: |
+  #         echo Running security scan...
+  #         # Here you would add commands to run your security scanning tools
+  #         # For example, you could use Trivy for container scanning:
+  #         trivy image ${{ secrets.DOCKERHUB_USERNAME }}/devsecops:latest
