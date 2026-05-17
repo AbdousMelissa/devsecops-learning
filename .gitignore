@@ -1,0 +1,155 @@
+# ===== Docker =====
+# Fichiers de build Docker temporaires
+.docker/
+docker-compose.override.yml
+
+# ===== Conteneurs =====
+# Fichiers de state des conteneurs
+.containers/
+*.pid
+
+# ===== Scripts Bash =====
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
+*~
+.bash_history
+.bash_profile
+.bashrc
+
+# ===== Git =====
+.git/
+.gitconfig
+
+# ===== Éditeurs =====
+# VS Code
+.vscode/
+*.code-workspace
+.VS/
+
+# Vim
+.vim/
+.vimrc
+.swp
+.swo
+*~
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ / PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ===== OS =====
+# Windows
+Thumbs.db
+.DS_Store
+*.exe
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.Xauthority
+.gnupg/
+
+# ===== Secrets et Credentials =====
+# GitHub Secrets / env files
+.env
+.env.local
+.env.*.local
+secrets/
+*.key
+*.pem
+*.crt
+*.secret
+
+# ===== Logs =====
+*.log
+logs/
+*.out
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+env/
+
+# ===== Node.js =====
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ===== Dépendances =====
+vendor/
+composer.lock
+
+# ===== Archives =====
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ===== Cache =====
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# ===== Fichiers temporaires =====
+.tmp/
+tmp/
+temp/
+*.tmp
+
+# ===== Fichiers de test locaux (optionnel) =====
+test-results/
+coverage/
+
+# ===== Docker images/artifacts (ne pas commiter les builds locaux) =====
+dist/
+build/
+
+# ===== Configuration de la machine =====
+.env.machine
+.local/
+
+# ===== Workspace local VS Code =====
+.vscode-server/
