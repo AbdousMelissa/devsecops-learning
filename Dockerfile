@@ -1,15 +1,18 @@
 # 1. Image de base
-FROM ubuntu:22.04
+FROM python:3.11-slim
 
 # 2. Répertoire de travail
 WORKDIR /app
 
 # 3. Copier les fichiers
-COPY test.sh /app/
+COPY requirements.txt /app/
 
-# 4. Permissions (si nécessaire) exécuté au build (ex: installer des packages)
-RUN chmod +x /app/test.sh
-RUN apt-get update && apt-get install -y shellcheck
+# 4. Installer les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py /app/
+
+EXPOSE 8080
 
 # 5. Commande par défaut exécuté au démarrage du conteneur
-CMD ["bash", "test.sh", "Docker User"]
+CMD ["python", "app.py"]
